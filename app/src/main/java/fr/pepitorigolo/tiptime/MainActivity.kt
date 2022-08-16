@@ -40,7 +40,12 @@ class MainActivity : AppCompatActivity() {
          */
         val stringInTextField = binding.costOfService.text.toString()
         //convertir le text en décimal
-        val cost = stringInTextField.toDouble()
+        val cost = stringInTextField.toDoubleOrNull()
+        //si le cout est null alors le text sera vide
+        if (cost == null) {
+            binding.tipResult.text= ""
+            return
+        }
 
         //permet d'obtenir le pourcentage de pourboire
         val selectedId = binding.tipOptions.checkedRadioButtonId
