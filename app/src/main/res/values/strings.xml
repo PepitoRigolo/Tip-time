@@ -7,5 +7,6 @@
     <string name="ok_15">OK (15%)</string>
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculate</string>
-    <string name="tip_amount">Tip Amount</string>
+    <!--%s permet d'avoir la devise formatée-->
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
