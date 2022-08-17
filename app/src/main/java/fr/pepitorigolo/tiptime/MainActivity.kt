@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     /* variable de niveau supérieur qui sera utile dans pls méthodes de la class MainActivity
         lateinit c'est pour dire que l'on va initialiser la variable avant de l'utiliser
      */
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.calculateButton.setOnClickListener { calculateTip() }
     }
 
-    fun calculateTip() {
+    private fun calculateTip() {
         /*récupère l'attribut de text du Cost of Serviceet on l'affecte à la variable stringInTextField
         binding.costOfService, fait référence à l'élément UI pour le coût du service
         .textà la fin indique de prendre ce résultat (un EditText objet) et d'en obtenir la propriété text
@@ -48,8 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //permet d'obtenir le pourcentage de pourboire
-        val selectedId = binding.tipOptions.checkedRadioButtonId
-        val tipPercentage = when (selectedId) {
+        val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
@@ -57,8 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         //calcul du pourboire et l'arrondir
         var tip = tipPercentage * cost
-        val roundUp = binding.roundUpSwitch.isChecked
-        if (roundUp) {
+        if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
         //afichage du pourboire dans le TextView
