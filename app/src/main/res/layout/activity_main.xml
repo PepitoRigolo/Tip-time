@@ -46,8 +46,18 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <ImageView
+        android:id="@+id/icon_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/service_question"
+        app:srcCompat="@drawable/ic_service"
+        android:importantForAccessibility="no"/>
     <TextView
         android:id="@+id/service_question"
+        style="@style/Widget.TipTime.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -69,28 +79,42 @@
 
         <RadioButton
             android:id="@+id/option_twenty_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/amazing_20" />
 
         <RadioButton
             android:id="@+id/option_eighteen_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/good_18" />
 
         <RadioButton
             android:id="@+id/option_fifteen_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ok_15" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/round_up_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/round_up_switch"
+        app:srcCompat="@drawable/ic_round_up"
+        android:importantForAccessibility="no"/>
 
     <!--match_parent: prend toute la taille dispo ici en largeur
     wrap_content: prend juste ce qu'il faut
     -->
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_switch"
+        style="@style/Widget.TipTime.CompoundButton.Switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -115,32 +139,13 @@
 
     <TextView
         android:id="@+id/tip_result"
+        style="@style/Widget.TipTime.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/tip_amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculate_button" />
-
-    <ImageView
-        android:id="@+id/icon_service_question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/service_question"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/service_question"
-        app:srcCompat="@drawable/ic_service"
-        android:importantForAccessibility="no"/>
-
-    <ImageView
-        android:id="@+id/icon_round_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/round_up_switch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/round_up_switch"
-        app:srcCompat="@drawable/ic_round_up"
-        android:importantForAccessibility="no"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
