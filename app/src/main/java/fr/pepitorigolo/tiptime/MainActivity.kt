@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.pepitorigolo.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
+import kotlin.math.ceil
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         .textà la fin indique de prendre ce résultat (un EditText objet) et d'en obtenir la propriété text
         .toString convertit le stringInTextField en chaine de caractère
          */
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
         //convertir le text en décimal
         val cost = stringInTextField.toDoubleOrNull()
         //si le cout est null alors le text sera vide
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         //calcul du pourboire et l'arrondir
         var tip = tipPercentage * cost
         if (binding.roundUpSwitch.isChecked) {
-            tip = kotlin.math.ceil(tip)
+            tip = ceil(tip)
         }
         //afichage du pourboire dans le TextView
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)

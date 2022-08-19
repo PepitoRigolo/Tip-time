@@ -3,9 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary_green">#69f0ae</color>
-    <color name="primary_green_light">#9fffe0</color>
-    <color name="primary_green_dark">#2bbd7e</color>
+    <color name="primary_green">#7c4dff</color>
+    <color name="primary_green_light">#b47cff</color>
+    <color name="primary_green_dark">#3f1dcb</color>
 
     <color name="secondary_green">#1b5e20</color>
     <color name="secondary_green_light">#4c8c4a</color>
